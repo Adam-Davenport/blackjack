@@ -18,7 +18,7 @@ class Game():
     def calculate_score(self, hand):
         score = 0
         for c in hand:
-            value = c.value
+            value = c.value()
             if value != 11:
                 score += value
             else:
@@ -43,7 +43,7 @@ class Game():
         print('Dealing 2 cards to each player.')
         self.deal()
         for p in self.players:
-            inp = lower(input())
+            inp = input().lower()
             while inp != 'y' or inp != 'n':
                 print('Value of your current hand: {}. Would you like to draw or pass?'.format(self.calculate_score(p.hand)))
                 inp = lower(input())
