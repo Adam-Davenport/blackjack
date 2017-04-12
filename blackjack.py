@@ -27,9 +27,9 @@ class Game():
                 else:
                     score += 11
         return score
-    def play_game(self):
-        print('The game is begining with ')
     def reset_round(self):
         self.deck = Deck()
         for p in self.players:
             p.discard()
+    def play_game(self):
+        print('The game is begining with ')
