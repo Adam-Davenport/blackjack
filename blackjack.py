@@ -1,7 +1,7 @@
 import cards
 
 class Player():
-    __init__(self):
+    def __init__(self):
         self.hand = []
     def discard(self):
         self.hand = []
@@ -10,11 +10,11 @@ class Player():
         self.hand.append(card)
 
 class Game():
-    __init__(self, players):
-        self.deck = Deck()
+    def __init__(self, players):
+        self.deck = cards.Deck()
         self.players = []
-        for p in players:
-            players.append(Player())
+        for p in range(players):
+            self.players.append(Player())
     def calculate_score(self, hand):
         score = 0
         for c in hand:
@@ -31,5 +31,21 @@ class Game():
         self.deck = Deck()
         for p in self.players:
             p.discard()
+    def draw(self):
+        return self.deck.draw()
+    def deal(self):
+        for i in range(2):
+            for p in self.players:
+                c = self.draw()
+                p.hand.append(c)
     def play_game(self):
-        print('The game is begining with ')
+        print('The game is begining with {} players.'.format(len(self.players)))
+        print('Dealing 2 cards to each player.')
+        self.deal()
+        for p in self.players:
+            inp = lower(input())
+            while inp != 'y' or inp != 'n':
+                print('Value of your current hand: {}. Would you like to draw or pass?'.format(self.calculate_score(p.hand)))
+                inp = lower(input())
+                if inp == 'y':
+                    p.append(self.draw())
