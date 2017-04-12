@@ -20,6 +20,7 @@ class Deck():
             for s in Card.suites:
                 card = Card(r, s)
                 self.cards.append(card)
+        self.shuffle()
     def shuffle(self):
         shuffle(self.cards)
     def draw(self):
