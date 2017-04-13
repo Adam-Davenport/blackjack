@@ -27,6 +27,7 @@ class Player():
         for c in self.hand:
             print('{} of {}'.format(c.rank, c.suite))
     def play(self):
+        print('Would you like to draw (d) or pass (p)?')
         inp = input().lower()
         return inp
 
