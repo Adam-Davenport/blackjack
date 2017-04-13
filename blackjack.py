@@ -27,12 +27,18 @@ class Game():
             scores[p.name] = p.calculate_score()
         print(scores)
 
+    def computer_round(self, computer):
+
+
     def play_game(self):
         print('The game is begining with {} players.'.format(len(self.players)))
         print('Current players:')
         print('Dealing 2 cards to each player.')
         self.deal()
         for p in self.players:
+            self.play_round()
+        self.find_winner()
+    def play_round(self, p):
             inp = ''
             while inp != 'd' and inp != 'p':
                 p.view_hand()
@@ -43,4 +49,6 @@ class Game():
                 if p.calculate_score() > 21:
                     inp = 'p'
                     print('You are over 21 points and are out of the game.')
-        self.find_winner()
+                elif p.calculate_score() == 21:
+                    print('Blackjack! You have 21 points!')
+                    inp = 'p'
