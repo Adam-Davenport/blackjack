@@ -2,9 +2,10 @@ from player import Player, Ai_Player
 import cards
 
 class Game():
-    def __init__(self, players):
+    def __init__(self, player):
         self.deck = cards.Deck()
         self.players = []
+        players = [player, 'James', 'Carlton', 'Maxwell', 'Houston', 'Bigsby']
         for p in players:
             self.players.append(Player(p))
     def reset_round(self):
