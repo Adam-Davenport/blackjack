@@ -27,9 +27,6 @@ class Game():
             scores[p.name] = p.calculate_score()
         print(scores)
 
-    def computer_round(self, computer):
-
-
     def play_game(self):
         print('The game is begining with {} players.'.format(len(self.players)))
         print('Current players:')
