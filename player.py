@@ -1,3 +1,4 @@
+from random import randint
 
 class Player():
     def __init__(self, name):
@@ -25,6 +26,9 @@ class Player():
         print('Current hand:')
         for c in self.hand:
             print('{} of {}'.format(c.rank, c.suite))
+    def play(self):
+        inp = input().lower()
+        return inp
 
 class Ai_Player(Player):
     def __init__(self):
