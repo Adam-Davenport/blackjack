@@ -1,8 +1,9 @@
 import cards
 
 class Player():
-    def __init__(self):
+    def __init__(self, name):
         self.hand = []
+        self.name = name
     def discard(self):
         self.hand = []
         return cards
@@ -13,8 +14,8 @@ class Game():
     def __init__(self, players):
         self.deck = cards.Deck()
         self.players = []
-        for p in range(players):
-            self.players.append(Player())
+        for p in players:
+            self.players.append(Player(p))
     def calculate_score(self, hand):
         score = 0
         for c in hand:
@@ -38,8 +39,12 @@ class Game():
             for p in self.players:
                 c = self.draw()
                 p.hand.append(c)
+    def find_winner(self):
+        for p in self.players:
+
     def play_game(self):
         print('The game is begining with {} players.'.format(len(self.players)))
+        print('Current players:')
         print('Dealing 2 cards to each player.')
         self.deal()
         for p in self.players:
