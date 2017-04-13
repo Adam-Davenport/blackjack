@@ -2,10 +2,11 @@ from player import Player, Ai_Player
 import cards
 
 class Game():
-    def __init__(self, player):
+    def __init__(self, player, count):
         self.deck = cards.Deck()
         self.players = []
         players = [player, 'James', 'Carlton', 'Maxwell', 'Houston', 'Bigsby']
+        players = player[::count]
         for p in players:
             self.players.append(Player(p))
     def reset_round(self):
