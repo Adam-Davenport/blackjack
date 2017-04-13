@@ -35,3 +35,8 @@ class Ai_Player(Player):
     def __init__(self):
         self.hand = []
         self.type = 'computer'
+    def play(self):
+        if self.calculate_score() < 18:
+            return 'p'
+        else:
+            return 'd'
