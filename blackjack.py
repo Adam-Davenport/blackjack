@@ -36,7 +36,7 @@ class Game():
         print('Dealing 2 cards to each player.')
         self.deal()
         for p in self.players:
-            self.play_round()
+            self.play_round(p)
         self.find_winner()
     def play_round(self, p):
             inp = ''
@@ -48,7 +48,7 @@ class Game():
                     inp = ''
                 if p.calculate_score() > 21:
                     inp = 'p'
-                    print('You are over 21 points and are out of the game.')
+                    print('{} is over 21 points and are out of the game.'.format(p.name))
                 elif p.calculate_score() == 21:
-                    print('Blackjack! You have 21 points!')
+                    print('Blackjack! {} has 21 points!'.format(p.name))
                     inp = 'p'
