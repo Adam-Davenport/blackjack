@@ -43,9 +43,9 @@ class Game():
         print('Dealing 2 cards to each player.')
         self.deal()
         for p in self.players:
-            inp = input().lower()
-            while inp != 'y' or inp != 'n':
-                print('Value of your current hand: {}. Would you like to draw or pass?'.format(self.calculate_score(p.hand)))
-                inp = lower(input())
+            inp = ''
+            while inp != 'd' or inp != 'p':
+                print('Value of your current hand: {}. Would you like to draw (d) or pass (p)?'.format(self.calculate_score(p.hand)))
+                inp = input().lower()
                 if inp == 'y':
-                    p.append(self.draw())
+                    p.draw(self.draw())
