@@ -1,7 +1,7 @@
 from random import shuffle
 
 class Card():
-    ranks = '1 2 3 4 5 6 7 8 9 10 J Q K A'.split(' ')
+    ranks = '2 3 4 5 6 7 8 9 10 J Q K A'.split(' ')
     suites = ['Spades', 'Clubs', 'Hearts', 'Diamonds']
 
     def __init__(self, rank, suite):
@@ -11,7 +11,7 @@ class Card():
     def index(self):
         return Card.ranks.index(self.rank)
     def value(self):
-        return Card.ranks.index(self.rank)+1
+        return Card.ranks.index(self.rank)+2
 
 class Deck():
     def __init__(self):
