@@ -40,4 +40,7 @@ class Game():
                 if inp == 'd':
                     self.draw(p)
                     inp = ''
+                if p.calculate_score() > 21:
+                    inp = 'p'
+                    print('You are over 21 points and are out of the game.')
         self.find_winner()
