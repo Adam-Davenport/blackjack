@@ -36,7 +36,7 @@ class Game():
             inp = ''
             while inp != 'd' and inp != 'p':
                 p.view_hand()
-                inp = input().lower()
+                inp = p.play()
                 if inp == 'd':
                     self.draw(p)
                     inp = ''
