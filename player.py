@@ -14,8 +14,10 @@ class Player():
         score = 0
         for c in self.hand:
             value = c.value()
-            if value != 11:
+            if value < 11:
                 score += value
+            elif value < 14:
+                score += 10
             else:
                 if score + 11 > 21:
                     score += 1
