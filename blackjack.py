@@ -6,7 +6,7 @@ class Game():
         self.deck = cards.Deck()
         self.players = []
         players = [player, 'James', 'Carlton', 'Maxwell', 'Houston', 'Bigsby']
-        players = player[::count]
+        players = player[::count+1]
         for p in players:
             self.players.append(Player(p))
     def reset_round(self):
