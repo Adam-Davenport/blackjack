@@ -16,7 +16,6 @@ class Game():
         card = self.deck.draw()
         player.draw(card)
         print(player.name + ' drew {} of {}'.format(card.rank, card.suite))
-
     def deal(self):
         for i in range(2):
             for p in self.players:
@@ -27,7 +26,6 @@ class Game():
         for p in self.players:
             scores[p.name] = p.calculate_score()
         print(scores)
-
     def play_game(self):
         print('The game is begining with {} players.'.format(len(self.players)))
         print('Current players:')
