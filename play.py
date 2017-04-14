@@ -13,7 +13,5 @@ while True:
             print('Please enter a valid number between 1 and 5:')
     except ValueError:
         print('Please enter a valid number between 1 and 5:')
-
-
 game = Game(name, player_count)
 game.play_game()
