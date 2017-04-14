@@ -36,6 +36,7 @@ class Game():
             self.play_round(p)
         self.find_winner()
     def play_round(self, p):
+        print('{} is playing.'.format(p.name))
         inp = ''
         while inp != 'd' and inp != 'p':
             p.view_hand()
