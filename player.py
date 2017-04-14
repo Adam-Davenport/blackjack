@@ -24,6 +24,21 @@ class Player():
                 else:
                     score += 11
         return score
+    def table_score(self):
+        score = 0
+        table = self.hand[1::]
+        for c in table:
+            value = c.value()
+            if value < 11:
+                score += value
+            elif value < 14:
+                score += 10
+            else:
+                if score + 11 > 21:
+                    score += 1
+                else:
+                    score += 11
+        return score
     def view_hand(self):
         print('Current hand:')
         for c in self.hand:
