@@ -6,8 +6,9 @@ class Game():
         self.deck = cards.Deck()
         self.players = []
         players = [player, 'James', 'Carlton', 'Maxwell', 'Houston', 'Bigsby']
-        players = player[::count+1]
+        players = players[0:count+1]
         for p in players:
+            print(p)
             self.players.append(Player(p))
     def reset_round(self):
         self.deck = Deck()
@@ -36,7 +37,7 @@ class Game():
             self.play_round(p)
         self.find_winner()
     def play_round(self, p):
-        print('{} is playing.'.format(p.name))
+        print(p.name)
         inp = ''
         while inp != 'd' and inp != 'p':
             p.view_hand()
