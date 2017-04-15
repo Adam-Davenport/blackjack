@@ -36,10 +36,10 @@ class Game():
 		high_score = 0
 		scores = sorted(scores)
 		for s in scores:
-			print(scores)
+			print(s)
 	def play_game(self):
 		print('The game is begining with {} players.'.format(len(self.players)))
-		print('Current players: ' + self.player_list)
+		print('Current players: ' + self.player_list())
 		print('Press enter to start the game.')
 		input()
 		print('Dealing 2 cards to each player.')
@@ -48,7 +48,7 @@ class Game():
 			self.play_round(p)
 		self.find_winner()
 	def play_round(self, p):
-		print(p.name)
+		print('\n' + p.name + '\n======================')
 		inp = ''
 		while inp != 'd' and inp != 'p':
 			p.view_hand()
