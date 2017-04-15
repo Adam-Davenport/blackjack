@@ -10,6 +10,12 @@ class Game():
 		for p in players:
 			print(p)
 			self.players.append(Player(p))
+	def player_list(self):
+		player_list = []
+		for p in self.players:
+			player_list.append(p.name)
+		return ', '.join(player_list)
+
 	def reset_round(self):
 		self.deck = Deck()
 		for p in self.players:
@@ -33,7 +39,9 @@ class Game():
 			print(scores)
 	def play_game(self):
 		print('The game is begining with {} players.'.format(len(self.players)))
-		print('Current players:')
+		print('Current players: ' + self.player_list)
+		print('Press enter to start the game.')
+		input()
 		print('Dealing 2 cards to each player.')
 		self.deal()
 		for p in self.players:
