@@ -43,6 +43,7 @@ class Game():
 					winners.append(s)
 				elif score > high_score:
 					winners = [s]
+					high_score = score
 		if high_score == 0:
 			print('Everyone lost.')
 		elif len(winners) == 1:
