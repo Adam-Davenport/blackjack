@@ -35,9 +35,23 @@ class Game():
 		for p in self.players:
 			scores[p.name] = p.calculate_score()
 		high_score = 0
-		scores = sorted(scores)
+		winners = []
 		for s in scores:
-			print(s)
+			score = scores[s]
+			if s < 22:
+				if score == high_score:
+					winners.append(s)
+				elif score > high_score:
+					winners = [s]
+		if high_score == 0:
+			print('Everyone lost.')
+		elif len(winners) == 1:
+			print(winners[0] + ' is the winner!')
+		else:
+			print(', '.join(winners) + ' tied this round')
+
+
+		print(scores)
 	def play_game(self):
 		print('The game is begining with {} players.'.format(len(self.players)))
 		print('Current players: ' + self.player_list())
@@ -63,4 +77,3 @@ class Game():
 			elif p.calculate_score() == 21:
 				print('Blackjack! {} has 21 points!'.format(p.name))
 				inp = 'p'
-		self.find_winner()
