@@ -64,15 +64,18 @@ class Game():
 	def play_round(self, p):
 		print('\n' + p.name + '\n======================')
 		inp = ''
-		while inp != 'd' and inp != 'p':
-			p.view_hand()
-			inp = p.play()
-			if inp == 'd':
-				self.draw(p)
-				inp = ''
-			if p.calculate_score() > 21:
-				inp = 'p'
-				print('{} is over 21 points and is out of the game.'.format(p.name))
-			elif p.calculate_score() == 21:
-				print('Blackjack! {} has 21 points!'.format(p.name))
-				inp = 'p'
+		if p.calculate_score() == 21:
+			print('Blackjack!')
+		else:
+			while inp != 'd' and inp != 'p':
+				p.view_hand()
+				inp = p.play()
+				if inp == 'd':
+					self.draw(p)
+					inp = ''
+				if p.calculate_score() > 21:
+					inp = 'p'
+					print('{} is over 21 points and is out of the game.'.format(p.name))
+				elif p.calculate_score() == 21:
+					print('Blackjack! {} has 21 points!'.format(p.name))
+					inp = 'p'
