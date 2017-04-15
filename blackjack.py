@@ -38,7 +38,7 @@ class Game():
 		winners = []
 		for s in scores:
 			score = scores[s]
-			if s < 22:
+			if score < 22:
 				if score == high_score:
 					winners.append(s)
 				elif score > high_score:
