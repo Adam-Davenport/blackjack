@@ -49,7 +49,8 @@ class Player():
         return inp
 
 class Ai_Player(Player):
-    def __init__(self):
+    def __init__(self, name):
+        Player.__init__(self, name)
         self.hand = []
         self.type = 'computer'
     def play(self):
