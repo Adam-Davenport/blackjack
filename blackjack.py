@@ -5,11 +5,12 @@ class Game():
 	def __init__(self, player, count):
 		self.deck = cards.Deck()
 		self.players = []
-		players = [player, 'James', 'Carlton', 'Maxwell', 'Houston', 'Bigsby']
-		players = players[0:count+1]
+		players = ['James', 'Carlton', 'Maxwell', 'Houston', 'Bigsby']
+		players = players[0:count]
+		self.players.append(Player(player))
 		for p in players:
 			print(p)
-			self.players.append(Player(p))
+			self.players.append(Ai_Player(p))
 	def player_list(self):
 		player_list = []
 		for p in self.players:
