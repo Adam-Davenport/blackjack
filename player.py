@@ -1,4 +1,5 @@
 from random import randint
+from blackjack import Game
 
 class Player():
 	def __init__(self, name):
