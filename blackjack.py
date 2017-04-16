@@ -61,15 +61,16 @@ class Game():
 			self.play_round(p)
 		self.find_winner()
 	def play_round(self, p):
-		table_scores = []
+		self.table_scores = []
 		print('\n' + p.name + '\n======================')
 		inp = ''
 		if p.calculate_score() == 21:
 			print('Blackjack!')
+			self.table_scores.append(21)
 		else:
 			while inp != 'd' and inp != 'p':
 				p.view_hand()
-				inp = p.play(self)
+				inp = p.play(self, game)
 				if inp == 'd':
 					self.draw(p)
 					inp = ''
@@ -79,4 +80,4 @@ class Game():
 				elif p.calculate_score() == 21:
 					print('Blackjack! {} has 21 points!'.format(p.name))
 					inp = 'p'
-			table_scores.append(p.table_score())
+			self.table_scores.append(p.table_score())
