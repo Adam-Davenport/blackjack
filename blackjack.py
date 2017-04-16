@@ -5,6 +5,7 @@ class Game():
 	def __init__(self, player, count):
 		self.deck = cards.Deck()
 		self.players = []
+		self.table_scores = []
 		players = ['James', 'Carlton', 'Maxwell', 'Houston', 'Bigsby']
 		players = players[0:count]
 		self.players.append(Player(player))
