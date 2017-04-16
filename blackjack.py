@@ -44,12 +44,13 @@ class Game():
 				elif score > high_score:
 					winners = [s]
 					high_score = score
+		print('')
 		if high_score == 0:
 			print('Everyone lost.')
 		elif len(winners) == 1:
-			print(winners[0] + ' is the winner!')
+			print(winners[0] + ' is the winner, with {} points!'.format(high_score))
 		else:
-			print(', '.join(winners) + ' tied this round')
+			print(', '.join(winners) + ' tied this round with {} points'.format(high_score))
 	def play_game(self):
 		print('The game is begining with {} players.'.format(len(self.players)))
 		print('Current players: ' + self.player_list())
