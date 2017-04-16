@@ -64,7 +64,7 @@ class Ai_Player(Player):
 				return 'd'
 			else:
 				return 'p'
-		elif self.calculate_score() > 15:
+		elif score > 15:
 			return 'p'
 		else:
 			return 'd'
