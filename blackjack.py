@@ -1,4 +1,5 @@
 from player import Player, Ai_Player
+from random import shuffle
 import cards
 
 class Game():
@@ -12,6 +13,7 @@ class Game():
 		for p in players:
 			print(p)
 			self.players.append(Ai_Player(p))
+		shuffle(self.players)
 	def player_list(self):
 		player_list = []
 		for p in self.players:
