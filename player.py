@@ -1,5 +1,5 @@
 from random import randint
-from blackjack import Game
+import blackjack
 
 class Player():
 	def __init__(self, name):
@@ -44,7 +44,7 @@ class Player():
 		print('Current hand:')
 		for c in self.hand:
 			print('{} of {}'.format(c.rank, c.suite))
-	def play(self):
+	def play(self, game):
 		print('Would you like to draw (d) or pass (p)?')
 		inp = input().lower()
 		return inp
@@ -54,7 +54,8 @@ class Ai_Player(Player):
 		Player.__init__(self, name)
 		self.hand = []
 		self.type = 'computer'
-	def play(self):
+	def play(self, game):
+		table_scores = game.table_scores
 		if self.calculate_score() < 18:
 			return 'p'
 		else:
