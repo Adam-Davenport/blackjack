@@ -56,9 +56,15 @@ class Ai_Player(Player):
 		self.type = 'computer'
 	def play(self, game):
 		table_scores = sorted(game.table_scores)
+		score = self.calculate_score()
 		if len(table_scores) > 0:
-			if self.calculate_score < table_scores[]
-		if self.calculate_score() < 18:
+			if score < table_scores[-1]:
+				return 'd'
+			elif score < 12:
+				return 'd'
+			else:
+				return 'p'
+		elif self.calculate_score() > 15:
 			return 'p'
 		else:
 			return 'd'
