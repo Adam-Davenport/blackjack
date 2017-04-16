@@ -70,7 +70,7 @@ class Game():
 		else:
 			while inp != 'd' and inp != 'p':
 				p.view_hand()
-				inp = p.play(self, game)
+				inp = p.play(self)
 				if inp == 'd':
 					self.draw(p)
 					inp = ''
