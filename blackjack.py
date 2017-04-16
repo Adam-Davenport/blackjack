@@ -50,7 +50,6 @@ class Game():
 			print(winners[0] + ' is the winner!')
 		else:
 			print(', '.join(winners) + ' tied this round')
-		print(scores)
 	def play_game(self):
 		print('The game is begining with {} players.'.format(len(self.players)))
 		print('Current players: ' + self.player_list())
